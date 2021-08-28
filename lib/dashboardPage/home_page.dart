@@ -1,4 +1,7 @@
 import 'package:dashboard/subject_page/subjectpage_screens/subject_tabs_screen.dart';
+import 'package:dashboard/menuBar/menu_bar.dart';
+
+import '../LogInPage/login_page.dart';
 import 'package:flutter/material.dart';
 
 import '../dummy_data.dart';
