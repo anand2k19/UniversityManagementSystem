@@ -1,7 +1,7 @@
-import 'package:dashboard/HomePage.dart';
-import 'package:dashboard/sub.dart';
+import './home_page.dart';
+import '../models/sub.dart';
 import 'package:flutter/material.dart';
-
+import '../dummy_data.dart';
 
 class AddSubject extends StatefulWidget {
   const AddSubject({Key? key}) : super(key: key);
@@ -11,17 +11,13 @@ class AddSubject extends StatefulWidget {
 }
 
 class _AddSubjectState extends State<AddSubject> {
-
   TextEditingController nameController = TextEditingController();
   TextEditingController nameController1 = TextEditingController();
-  String SCode ='';
+  String SCode = '';
   String SName = '';
-
-
 
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
@@ -29,14 +25,14 @@ class _AddSubjectState extends State<AddSubject> {
             leading: BackButton(
               onPressed: () => Navigator.pop(context, false),
             ),
-
           ),
-          body: Center(child: Column(children: <Widget>[
+          body: Center(
+              child: Column(children: <Widget>[
             Container(
-                margin: EdgeInsets.all(20),
+                margin: const EdgeInsets.all(20),
                 child: TextField(
                   controller: nameController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Subject Code',
                   ),
@@ -48,48 +44,40 @@ class _AddSubjectState extends State<AddSubject> {
                       //fullName = nameController.text;
                     });
                   },
-                )
-            ),
+                )),
             Container(
-
-                margin: EdgeInsets.all(20),
-                child: TextField(
-                  controller: nameController1,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Subject Name',
-                  ),
-                  onChanged: (text) {
-                    setState(() {
-                      SName = text;
-                      //you can access nameController in its scope to get
-                      // the value of text entered as shown below
-                      //fullName = nameController.text;
-                    });
-                  },
+              margin: EdgeInsets.all(20),
+              child: TextField(
+                controller: nameController1,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Subject Name',
                 ),
+                onChanged: (text) {
+                  setState(() {
+                    SName = text;
+                    //you can access nameController in its scope to get
+                    // the value of text entered as shown below
+                    //fullName = nameController.text;
+                  });
+                },
+              ),
             ),
             ElevatedButton(
-                onPressed: () {
-                 HomePage.subjects.add(new sub(sc:SCode, sname: SName));
-                 Navigator.push(
-                   context,
-                   MaterialPageRoute(builder: (context) => HomePage()),
-                 );
-
-                },
+              onPressed: () {
+                  subjects.add(sub(
+                    subjectCode: SCode,
+                    subjectName: SName,
+                    subjectTeacher: "Ron Jacob Varghese",
+                    subjectColor:Colors.grey,));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                );
+              },
               child: Text('Submit'),
             ),
-          ]
-          )
-          )
-      ),
+          ]))),
     );
-
-
-
-
-
   }
 }
-
