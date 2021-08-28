@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:dashboard/SettingsPage.dart';
-import 'package:dashboard/LogInPage.dart';
-import 'package:dashboard/HomePage.dart';
+import 'LogInPage/login_page.dart';
+import './subject_page/subject_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,10 +17,8 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.amber,
       ),
-      home: LogInPage(),
+      home: SubjectPage(),
     );
   }
 }
-
-
-
+f

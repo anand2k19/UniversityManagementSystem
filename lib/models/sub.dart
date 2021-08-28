@@ -1,5 +1,3 @@
-import 'package:dashboard/HomePage.dart';
-import 'package:flutter/material.dart';
 
 class sub{
   final String sc;
