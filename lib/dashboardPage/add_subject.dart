@@ -1,6 +1,7 @@
 import './home_page.dart';
 import '../models/sub.dart';
 import 'package:flutter/material.dart';
+import '../dummy_data.dart';
 
 class AddSubject extends StatefulWidget {
   const AddSubject({Key? key}) : super(key: key);
@@ -28,10 +29,10 @@ class _AddSubjectState extends State<AddSubject> {
           body: Center(
               child: Column(children: <Widget>[
             Container(
-                margin: EdgeInsets.all(20),
+                margin: const EdgeInsets.all(20),
                 child: TextField(
                   controller: nameController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Subject Code',
                   ),
@@ -48,7 +49,7 @@ class _AddSubjectState extends State<AddSubject> {
               margin: EdgeInsets.all(20),
               child: TextField(
                 controller: nameController1,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Subject Name',
                 ),
@@ -64,7 +65,11 @@ class _AddSubjectState extends State<AddSubject> {
             ),
             ElevatedButton(
               onPressed: () {
-                HomePage.subjects.add(new sub(sc: SCode, sname: SName));
+                  subjects.add(sub(
+                    subjectCode: SCode,
+                    subjectName: SName,
+                    subjectTeacher: "Ron Jacob Varghese",
+                    subjectColor:Colors.grey,));
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => HomePage()),

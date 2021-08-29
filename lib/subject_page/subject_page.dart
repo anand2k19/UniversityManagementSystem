@@ -5,22 +5,27 @@ import "./subjectpage_comp/subject_header.dart";
 import "./subjectpage_comp/subject_home.dart";
 import "./subjectpage_comp/note_list.dart";
 import "../models/note.dart";
+import "../dummy_data.dart";
 
 class SubjectPage extends StatefulWidget {
+  final String subjectName;
+  final String subjectCode;
+  final String subjectTeacher;
+  final Color subjectColor;
+
+  SubjectPage({
+    required this.subjectName,
+    required this.subjectCode,
+    required this.subjectTeacher,
+    required this.subjectColor,
+  });
+
   @override
   _SubjectPageState createState() => _SubjectPageState();
 }
 
 class _SubjectPageState extends State<SubjectPage> {
   bool _mode = false;
-  final List<Note> _dummyData = [
-    Note(note:"This is an announcement brought to you by crashfm",date:DateTime.now()),
-    Note(note:"No more announcement todya folks",date:DateTime.now()),
-    Note(note:"akdfhakdjfhafhawklfhkwefasdknvjsdahfkjasflasflasjfuyhjgjkhgkjgjhgkjhgjhgkjhgkjgkjgkgjgkghjkgkjg",date:DateTime.now()),
-    Note(note:"adhsfakdjhfklasdhflaksdhflakhsdflkjahsdf",date:DateTime.now()),
-    Note(note:"aldfhaklsdfhlkjdhsflksdhflkjdhsf",date:DateTime.now()),
-    Note(note:"aldfhlkajdhsfkjadhsfkdsjhfdskhfladksf",date:DateTime.now()),
-  ];
 
   void _changeMode(val) {
     setState(() {
@@ -37,7 +42,7 @@ class _SubjectPageState extends State<SubjectPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("The Subject of dreams"),
+        title: Text(widget.subjectName),
         backgroundColor: Colors.transparent,
       ),
       body: SingleChildScrollView(
@@ -46,9 +51,9 @@ class _SubjectPageState extends State<SubjectPage> {
           color: Colors.grey[250],
           child: Column(
             children: [
-              SubjectHeader("Embedded Systems"),
-              SubjectHome(
-                  "19CSE303", "Rosdfsadfadsfasdfcsd", _mode, _changeMode),
+              SubjectHeader(widget.subjectName, widget.subjectColor),
+              SubjectHome(widget.subjectCode, widget.subjectTeacher, _mode,
+                  _changeMode),
               const SizedBox(
                 height: 20,
               ),
@@ -91,7 +96,7 @@ class _SubjectPageState extends State<SubjectPage> {
                           ],
                         ),
                       ),
-                      NoteList(_dummyData, _mode),
+                      NoteList(dummyData, _mode),
                     ],
                   ))
             ],

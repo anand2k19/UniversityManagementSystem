@@ -2,8 +2,8 @@ import "package:flutter/material.dart";
 
 class SubjectHeader extends StatelessWidget {
   final String header;
-
-  SubjectHeader(this.header);
+  final Color subjectColor;
+  SubjectHeader(this.header, this.subjectColor);
 
   @override
   Widget build(BuildContext context) {
