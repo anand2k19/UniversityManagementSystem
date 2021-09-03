@@ -1,6 +1,7 @@
 import '../LogInPage/login_page.dart';
-import '../subject_page/subject_page.dart';
 import 'package:flutter/material.dart';
+
+import '../subject_page/subjectpage_screens/subject_tabs_screen.dart';
 import '../dummy_data.dart';
 
 class HomePage extends StatefulWidget {
@@ -152,7 +153,7 @@ class _HomePageState extends State<HomePage> {
                 return GestureDetector(
                   onTap: () => Navigator.of(context).push(
                     MaterialPageRoute(
-                        builder: (ctx) => SubjectPage(
+                        builder: (ctx) => SubjectTabsScreen(
                               subjectCode: subjects[index].subjectCode,
                               subjectName: subjects[index].subjectName,
                               subjectTeacher: subjects[index].subjectTeacher,
