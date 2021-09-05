@@ -1,3 +1,5 @@
+import '../menuBar/menu_bar.dart';
+
 import '../LogInPage/login_page.dart';
 import 'package:flutter/material.dart';
 import 'calender_view.dart';
@@ -50,38 +52,7 @@ class _HomePageState extends State<DashboardPage> {
         //       isSelected: _selections)
         //   ],
       ),
-      drawer: Drawer(
-          child: ListView(
-        children: [
-          const UserAccountsDrawerHeader(
-            accountName: Text("Ram V"),
-            accountEmail: Text("ram@gmail.com"),
-            currentAccountPicture: CircleAvatar(
-              backgroundColor: Colors.white,
-              child: Text("P"),
-            ),
-          ),
-          buildListTile("I1", context),
-          buildListTile("I2", context),
-          buildListTile("I3", context),
-          buildListTile("Settings", context),
-          ListTile(
-            title: const Text(
-              "Log Out",
-              style: TextStyle(color: Colors.red),
-            ),
-            trailing: const Icon(Icons.arrow_upward),
-            onTap: () {
-              Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(
-                      builder: (BuildContext context) => const LogInPage()),
-                  (route) => false);
-            },
-          ),
-          const Divider(),
-        ],
-      )),
+      drawer: menuBar(),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         items: const <BottomNavigationBarItem>[
