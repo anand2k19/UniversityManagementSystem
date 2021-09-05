@@ -33,7 +33,7 @@ class menuBar extends StatelessWidget {
                 decoration: BoxDecoration(color: Colors.pink),
                 currentAccountPicture: CircleAvatar(backgroundColor: Colors.grey,) ,
                 ),
-            menuBarItems('Profile', Icons.face, 'profilePage'),
+            menuBarItems('Profile', Icons.account_circle, 'profilePage'),
             menuBarItems('Registration', Icons.app_registration, 'registrationPage'),
             menuBarItems('Fees', Icons.money, 'feesPage'),
             menuBarItems('Settings', Icons.settings, 'settingsPage'),
