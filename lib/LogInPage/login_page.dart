@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import '../dashboardPage/home_page.dart';
+import '../dashboardPage/dashboard_page.dart';
 
 TextEditingController nameController = TextEditingController();
 TextEditingController passwordController = TextEditingController();
 
 class LogInPage extends StatelessWidget {
+  const LogInPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
@@ -59,7 +61,7 @@ class LogInPage extends StatelessWidget {
                       print(passwordController.text);
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => HomePage()),
+                        MaterialPageRoute(builder: (context) => DashboardPage()),
                       );
                     },
                   )),
