@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:intl/intl.dart";
+import "package:font_awesome_flutter/font_awesome_flutter.dart";
 
 import '../../models/note.dart';
 import '../subjectpage_screens/subject_page.dart';
@@ -82,7 +83,7 @@ class _AnnouncementState extends State<Announcement> {
         ),
         if (SubjectPage.mode)
           Positioned(
-            right: 0,
+            right: 3,
             bottom: 0,
             child: IconButton(
                 iconSize: 20,
@@ -90,7 +91,7 @@ class _AnnouncementState extends State<Announcement> {
                 onPressed: () => setState(() {
                       widget.note.isOpen = !widget.note.isOpen;
                     }),
-                icon: const Icon(Icons.arrow_downward)),
+                icon: Icon(FontAwesomeIcons.angleDown,color:Colors.grey.shade400,size:23,)),
           ),
         if (widget.note.isOpen && SubjectPage.mode)
           Positioned(
