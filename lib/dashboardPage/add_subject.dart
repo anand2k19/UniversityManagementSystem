@@ -1,4 +1,4 @@
-import './home_page.dart';
+import './dashboard_page.dart';
 import '../models/sub.dart';
 import 'package:flutter/material.dart';
 import '../dummy_data.dart';
