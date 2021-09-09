@@ -1,5 +1,5 @@
-import 'package:dashboard/menuBar/menuBarScreens/registration/course_registration.dart';
-import 'package:dashboard/menuBar/menuBarScreens/registration/registration_status.dart';
+import './course_registration.dart';
+import './registration_status.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -15,24 +15,24 @@ class _registrationState extends State<registration> {
   String semValue = 'Select';
   String regType = 'Regular';
 
+  bool reg_mode = false;
+
   changeTable() {
     if (semValue == 'S2' && regType == 'Regular') {
-      return registration_status2();
+      return const registration_status2();
     } else if (semValue == 'S5' && regType == 'Regular') {
-      return registration_status5();
+      return const registration_status5();
     } else if (regType == 'ReExam') {
-      return Text('No Student Registered!');
+      return const Text('No Student Registered!');
     } else {
-      return registration_statusx();
+      return const Text('No Student Registered Yet!');
     }
   }
 
-  bool x = false;
-  bool select() {
+  void isSelected(ListItem<Map> course) {
     setState(() {
-      x = !x;
+      course.isSelected = true;
     });
-    return x;
   }
 
   @override
@@ -121,6 +121,30 @@ class _registrationState extends State<registration> {
             ),
             Column(
               children: [
+                Row(children: [
+                  const SizedBox(
+                    width: 30,
+                  ),
+                  reg_mode ? const Text('Admin') : const Text('Student'),
+                  Switch(
+                      activeColor: Theme.of(context).primaryColor,
+                      value: reg_mode,
+                      onChanged: (x) {
+                        setState(() {
+                          reg_mode = x;
+                        });
+                      }),
+                  const SizedBox(
+                    width: 120,
+                  ),
+                  if (reg_mode)
+                    FlatButton(
+                      onPressed: () {},
+                      child: const Text('ADD Course'),
+                      color: Theme.of(context).primaryColor,
+                      textColor: Colors.white,
+                    ),
+                ]),
                 const SizedBox(
                   height: 10,
                 ),
@@ -180,11 +204,11 @@ class _registrationState extends State<registration> {
                   ],
                 ),
                 Container(
-                  margin: EdgeInsets.only(right: 20),
+                    margin: const EdgeInsets.only(right: 20),
                     alignment: Alignment.bottomRight,
                     child: ElevatedButton(
                         onPressed: () {}, child: const Text('Save'))),
-                course_registration(x, select),
+                course_registration(isSelected),
               ],
             ),
           ],
@@ -192,4 +216,10 @@ class _registrationState extends State<registration> {
       ),
     );
   }
+}
+
+class ListItem<T> {
+  bool isSelected = false;
+  T data;
+  ListItem(this.data);
 }

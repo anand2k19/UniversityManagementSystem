@@ -1,47 +1,92 @@
-import 'package:dashboard/menuBar/menuBarScreens/registration/registration.dart';
+import './registration.dart';
 import 'package:flutter/material.dart';
 
-class course_registration extends StatelessWidget {
-  final Function select;
-  final bool x;
-  course_registration(this.x, this.select);
+class course_registration extends StatefulWidget {
+  final Function isSelected;
+  course_registration(this.isSelected);
 
   @override
+  _course_registrationState createState() => _course_registrationState();
+}
+
+class _course_registrationState extends State<course_registration> {
+  
+  @override
   Widget build(BuildContext context) {
-    List course = [
-       ['19CSE301', 'Computer Networking'],
-       ['19CSE302', 'Design and Analysis of Algorithm'],
-       ['19CSE303', 'Embedded Systems'],
-       ['19CSE304', 'Foundations of Data Science'],
-       ['19CSE305', 'Machine Learning'],
-       ['19ENV300', 'Environmental Science'],
-       ['19CSE331', 'Cryptography'],
-       ['19SSK301', 'Soft Skill'],
-       ['19CSE304', 'Foundations of Data Science'],
-       ['19CSE304', 'Foundations of Data Science'],
-       ['19CSE304', 'Foundations of Data Science'],
-       ['19CSE304', 'Foundations of Data Science'],
-       ['19CSE304', 'Foundations of Data Science'],
+    // List course = [
+    //   [ListItem<String>('19CSE301'), ListItem<String>('Computer Networking')],
+    //   [
+    //     ListItem<String>('19CSE302'),
+    //     ListItem<String>('Design and Analysis of Algorithm')
+    //   ],
+    //   [ListItem<String>('19CSE303'), ListItem<String>('Embedded Systems')],
+    //   [
+    //     ListItem<String>('19CSE304'),
+    //     ListItem<String>('Foundations of Data Science')
+    //   ],
+    //   [ListItem<String>('19CSE305'), ListItem<String>('Machine Learning')],
+    //   [ListItem<String>('19ENV300'), ListItem<String>('Environmental Science')],
+    //   [ListItem<String>('19CSE331'), ListItem<String>('Cryptography')],
+    //   [ListItem<String>('19SSK301'), ListItem<String>('Soft Skill')],
+    //   [
+    //     ListItem<String>('19CSE304'),
+    //     ListItem<String>('Foundations of Data Science')
+    //   ],
+    //   [
+    //     ListItem<String>('19CSE304'),
+    //     ListItem<String>('Foundations of Data Science')
+    //   ],
+    //   [
+    //     ListItem<String>('19CSE304'),
+    //     ListItem<String>('Foundations of Data Science')
+    //   ],
+    //   [
+    //     ListItem<String>('19CSE304'),
+    //     ListItem<String>('Foundations of Data Science')
+    //   ],
+    //   [
+    //     ListItem<String>('19CSE304'),
+    //     ListItem<String>('Foundations of Data Science')
+    //   ],
+    // ];
+
+    List cor = [
+      ListItem<Map>({0:'19CSE301',1:'Foundations of Data Science'}),
+      ListItem<Map>({0:'19CSE301',1:'Foundations of Data Science'}),
+      ListItem<Map>({0:'19CSE301',1:'Foundations of Data Science'}),
+      ListItem<Map>({0:'19CSE301',1:'Foundations of Data Science'}),
+      ListItem<Map>({0:'19CSE301',1:'Foundations of Data Science'}),
+      ListItem<Map>({0:'19CSE301',1:'Foundations of Data Science'}),
+      ListItem<Map>({0:'19CSE301',1:'Foundations of Data Science'}),
+      ListItem<Map>({0:'19CSE301',1:'Foundations of Data Science'}),
+      ListItem<Map>({0:'19CSE301',1:'Foundations of Data Science'}),
+      ListItem<Map>({0:'19CSE301',1:'Foundations of Data Science'}),
+      ListItem<Map>({0:'19CSE301',1:'Foundations of Data Science'}),
+      ListItem<Map>({0:'19CSE301',1:'Foundations of Data Science'})
     ];
 
     return Expanded(
       child: ListView.builder(
-        itemCount: course.length,
+        itemCount: cor.length,
         itemBuilder: (BuildContext context, int index) {
           return Container(
-            margin: EdgeInsets.only(top:2.5,bottom:2.5),
+            margin: const EdgeInsets.only(top: 2.5, bottom: 2.5,right: 15,left: 15),
             height: 70,
             child: Card(
-              color: Color.fromRGBO(200, 100, 100, 1),
               child: ListTile(
-                isThreeLine: true,
-                selected: x,
-                title: Text('${course[index][0]}'),
-                subtitle: Text('${course[index][1]}'),
-                trailing: Icon(Icons.check),
-                onLongPress: () {
-                  select();
-                },
+                selected: cor[index].isSelected,
+                title: Text('${cor[index].data[0]}${cor[index].isSelected}'),
+                subtitle: Text('${cor[index].data[1]}'),
+                trailing: const Icon(Icons.check),
+                onTap: () => widget.isSelected(cor[index]),
+                // onTap: () {
+                //   if (cor.any((item) => item.isSelected)) {
+                //     setState(() {
+                //       cor[index].isSelected =
+                //           !cor[index].isSelected;
+                //     });
+                //   }
+                // },
               ),
             ),
           );
@@ -50,3 +95,6 @@ class course_registration extends StatelessWidget {
     );
   }
 }
+
+
+
