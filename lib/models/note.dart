@@ -2,7 +2,7 @@ import "package:flutter/material.dart";
 
 class Note {
   final String subjectCode;
-  final String note;
+  String note;
   final DateTime date;
   bool isOpen;
   bool isEdit;
