@@ -1,5 +1,7 @@
 import "package:flutter/material.dart";
 
+import '../subjectpage_screens/new_announcement_screen.dart';
+import './edit_announcement.dart';
 import "../../dummy_data.dart";
 import "./announcement.dart";
 import '../subjectpage_screens/subject_page.dart';
@@ -19,6 +21,16 @@ class _AnnouncementsState extends State<Announcements> {
       dummyData.removeAt(index);
       dummyData[index].isOpen = false;
     });
+  }
+
+  void _toeditNote(BuildContext ctx, int index) {
+    showModalBottomSheet(
+        context: ctx,
+        builder: (_) {
+          return GestureDetector(
+              onTap: () {},
+              child: EditAnnouncement(dummyData[index], index, _removeNote));
+        });
   }
 
   @override
@@ -71,7 +83,8 @@ class _AnnouncementsState extends State<Announcements> {
                 height: widget.listHeight * 0.9,
                 child: ListView.builder(
                   itemBuilder: (ctx, index) {
-                    return Announcement(dummyData[index], index, _removeNote);
+                    return Announcement(
+                        dummyData[index], index, _removeNote, _toeditNote);
                   },
                   itemCount: dummyData.length,
                 ),

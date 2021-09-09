@@ -9,8 +9,9 @@ class Announcement extends StatefulWidget {
   final Note note;
   final int index;
   final Function removeNote;
+  final Function editNote;
 
-  Announcement(this.note, this.index, this.removeNote);
+  Announcement(this.note, this.index, this.removeNote, this.editNote);
 
   @override
   State<Announcement> createState() => _AnnouncementState();
@@ -91,60 +92,74 @@ class _AnnouncementState extends State<Announcement> {
                 onPressed: () => setState(() {
                       widget.note.isOpen = !widget.note.isOpen;
                     }),
-                icon: Icon(FontAwesomeIcons.angleDown,color:Colors.grey.shade400,size:23,)),
+                icon: Icon(
+                  FontAwesomeIcons.angleDown,
+                  color: Colors.grey.shade400,
+                  size: 23,
+                )),
           ),
         if (widget.note.isOpen && SubjectPage.mode)
           Positioned(
             bottom: 25,
             right: 15,
             child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      blurRadius: 5,
-                      spreadRadius: 3,
-                      offset: const Offset(-4, -3),
-                    ),
-                  ],
-                ),
-                width: 100,
-                height: 50,
-                child: Column(children: [
+              decoration: BoxDecoration(
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    blurRadius: 5,
+                    spreadRadius: 3,
+                    offset: const Offset(-4, -3),
+                  ),
+                ],
+              ),
+              width: 100,
+              height: 50,
+              child: Column(
+                children: [
                   InkWell(
                     onTap: () => widget.removeNote(widget.index),
                     child: Container(
-                        alignment: Alignment.center,
-                        width: 100,
-                        height: 25,
-                        decoration: BoxDecoration(
-                            border: BorderDirectional(
-                          bottom: BorderSide(
-                            width: 2,
-                            color: Colors.grey.withOpacity(0.1),
-                          ),
-                        )),
-                        child: const Text("Delete",
-                            style: TextStyle(color: Colors.blueGrey))),
+                      alignment: Alignment.center,
+                      width: 100,
+                      height: 25,
+                      decoration: BoxDecoration(
+                          border: BorderDirectional(
+                        bottom: BorderSide(
+                          width: 2,
+                          color: Colors.grey.withOpacity(0.1),
+                        ),
+                      )),
+                      child: const Text(
+                        "Delete",
+                        style: TextStyle(color: Colors.blueGrey),
+                      ),
+                    ),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () => widget.editNote(context, widget.index),
                     child: Container(
-                        alignment: Alignment.center,
-                        width: 100,
-                        height: 25,
-                        decoration: BoxDecoration(
-                            border: BorderDirectional(
+                      alignment: Alignment.center,
+                      width: 100,
+                      height: 25,
+                      decoration: BoxDecoration(
+                        border: BorderDirectional(
                           bottom: BorderSide(
                             width: 2,
                             color: Colors.grey.withOpacity(0.1),
                           ),
-                        )),
-                        child: const Text("Edit",
-                            style: TextStyle(color: Colors.blueGrey))),
+                        ),
+                      ),
+                      child: const Text(
+                        "Edit",
+                        style: TextStyle(color: Colors.blueGrey),
+                      ),
+                    ),
                   ),
-                ])),
+                ],
+              ),
+            ),
           )
       ],
     );

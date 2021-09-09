@@ -195,7 +195,7 @@ class registration_statusx extends StatelessWidget {
                     border: TableBorder.all(
                         color: Colors.black,
                         width: 1,
-                        borderRadius: const BorderRadius.all(Radius.circular(10))),
+                      ),
                     columnWidths: const {
                       0: FixedColumnWidth(200),
                       1: FixedColumnWidth(110),
