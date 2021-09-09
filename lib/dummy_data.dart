@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 import "./models/note.dart";
@@ -104,3 +105,4 @@ final List<Note> dummyData = [
     date: DateTime.now(),
   ),
 ];
+

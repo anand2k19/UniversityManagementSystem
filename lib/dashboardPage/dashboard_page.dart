@@ -10,18 +10,21 @@ class DashboardPage extends StatefulWidget {
   const DashboardPage({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _DashboardPageState createState() => _DashboardPageState();
+
+
+
 }
 
-class _HomePageState extends State<DashboardPage> {
+class _DashboardPageState extends State<DashboardPage> {
   int _currentIndex = 0;
-
+  bool isVisible=false;
 
 
    final List <Widget> _widgetOptions = <Widget> [
      const HomePage(),
      const MarksPage(),
-     const CalenderPage(),
+     CalenderPage(),
    ];
 
 
@@ -41,6 +44,7 @@ class _HomePageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset:false ,
       appBar: AppBar(
         centerTitle: true,
         title: const Text('AUMS'),
@@ -76,8 +80,10 @@ class _HomePageState extends State<DashboardPage> {
         },
       ),
       body: _widgetOptions.elementAt(_currentIndex),
+
     );
   }
+
 
 
 }

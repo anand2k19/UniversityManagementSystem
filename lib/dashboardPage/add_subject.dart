@@ -44,9 +44,10 @@ class _AddSubjectState extends State<AddSubject> {
                       //fullName = nameController.text;
                     });
                   },
-                )),
+                ),
+            ),
             Container(
-              margin: EdgeInsets.all(20),
+              margin: const EdgeInsets.all(20),
               child: TextField(
                 controller: nameController1,
                 decoration: const InputDecoration(
@@ -75,7 +76,7 @@ class _AddSubjectState extends State<AddSubject> {
                   MaterialPageRoute(builder: (context) => HomePage()),
                 );
               },
-              child: Text('Submit'),
+              child: const Text('Submit'),
             ),
           ]))),
     );
