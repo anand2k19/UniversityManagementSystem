@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
           margin: const EdgeInsets.all(0),
           height: 50.0,
           width: 400.0,
-          color: Colors.brown,
+          color: Theme.of(context).accentColor,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
