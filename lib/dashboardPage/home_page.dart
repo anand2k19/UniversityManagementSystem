@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 
 import '../dummy_data.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -15,13 +14,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   bool isSwitched = false;
   bool isButtonDisabled = true;
   var textValue = 'Switch is OFF';
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -72,21 +67,27 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         Expanded(
-          child: GridView.count(
+          child: GridView(
             padding: const EdgeInsets.all(10),
-            crossAxisCount: 2,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 20,
+            // crossAxisCount: 2,
+            // crossAxisSpacing: 10,
+            // mainAxisSpacing: 20,
+            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 300,
+              childAspectRatio: 5 / 4,
+              mainAxisSpacing: 20,
+              crossAxisSpacing: 20,
+            ),
             children: List.generate(subjects.length, (index) {
               return GestureDetector(
                 onTap: () => Navigator.of(context).push(
                   MaterialPageRoute(
                       builder: (ctx) => SubjectTabsScreen(
-                        subjectCode: subjects[index].subjectCode,
-                        subjectName: subjects[index].subjectName,
-                        subjectTeacher: subjects[index].subjectTeacher,
-                        subjectColor: subjects[index].subjectColor,
-                      )),
+                            subjectCode: subjects[index].subjectCode,
+                            subjectName: subjects[index].subjectName,
+                            subjectTeacher: subjects[index].subjectTeacher,
+                            subjectColor: subjects[index].subjectColor,
+                          )),
                 ),
                 child: Container(
                   height: 100,
@@ -94,37 +95,29 @@ class _HomePageState extends State<HomePage> {
                   alignment: Alignment.bottomRight,
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                          begin: Alignment.bottomRight,
-                          end: Alignment.topRight,
-                          colors: [Colors.lightBlueAccent, Colors.orange]),
-                      color: Colors.yellow[100],
-                      borderRadius:
-                      const BorderRadius.all(Radius.circular(20)),
-                      border: Border.all(
-                        color: Colors.red,
-                        width: 5,
-                      )),
+                    gradient: LinearGradient(
+                        begin: Alignment.bottomRight,
+                        end: Alignment.topRight,
+                        colors: [
+                          subjects[index].subjectColor,
+                          subjects[index].subjectColor.withOpacity(0.7),
+                        ]),
+                    color: Colors.yellow[100],
+                    borderRadius: const BorderRadius.all(Radius.circular(20)),
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      const SizedBox(
-                        width: 20,
-                        height: 20,
-                      ),
-                      const SizedBox(
-                        width: 20,
-                        height: 20,
-                      ),
-                      const SizedBox(
-                        width: 20,
-                        height: 20,
-                      ),
                       Text(
                         subjects[index].subjectCode,
                       ),
-                      Text(subjects[index].subjectName),
+                      Text(
+                        subjects[index].subjectName,
+                        textAlign: TextAlign.right,
+                        style: TextStyle(
+                            fontSize: 13, fontWeight: FontWeight.bold),
+                      ),
                     ],
                   ),
                 ),
@@ -134,8 +127,6 @@ class _HomePageState extends State<HomePage> {
         ),
       ],
     );
-
-
   }
 
   void toggleSwitch(bool value) {
@@ -145,7 +136,6 @@ class _HomePageState extends State<HomePage> {
         isButtonDisabled = false;
         textValue = 'Switch Button is ON';
       });
-
     } else {
       setState(() {
         isSwitched = false;
@@ -154,9 +144,4 @@ class _HomePageState extends State<HomePage> {
       });
     }
   }
-
-
-
-
-
 }
