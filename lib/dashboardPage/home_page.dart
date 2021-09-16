@@ -35,6 +35,7 @@ class _HomePageState extends State<HomePage> {
               const Text(
                 'Admin',
                 style: TextStyle(
+                  fontFamily:'Glory',
                   color: Colors.lime,
                 ),
               ),
