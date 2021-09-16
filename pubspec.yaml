@@ -79,7 +79,6 @@ flutter:
     - family: Glory
       fonts:
         - asset: fonts/Glory-VariableFont_wght.ttf
-    #         style: italic
 
 
     - family: Montserrat
@@ -101,6 +100,36 @@ flutter:
     - family: Alumni_Sans
       fonts:
         - asset: fonts/AlumniSans-VariableFont_wght.ttf
+
+    - family: Roboto
+      fonts:
+        - asset: fonts/Roboto-Thin.ttf
+
+    - family: Fira_Sans
+      fonts:
+        - asset: fonts/FiraSans-ExtraLight.ttf
+
+    - family: Alegreya_Sans
+      fonts:
+        - asset: fonts/AlegreyaSans-Light.ttf
+
+    - family: Lato
+      fonts:
+        - asset: fonts/Lato-Light.ttf
+
+    - family: Lora
+      fonts:
+        - asset: fonts/Lora-VariableFont_wght.ttf
+
+    - family: Open_Sans
+      fonts:
+        - asset: fonts/OpenSans-Light.ttf
+
+
+
+
+
+
 
 
 
