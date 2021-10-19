@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
             // crossAxisCount: 2,
             // crossAxisSpacing: 10,
             // mainAxisSpacing: 20,
-            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: 300,
               childAspectRatio: 5 / 4,
               mainAxisSpacing: 20,

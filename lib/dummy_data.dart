@@ -104,3 +104,65 @@ final List<Note> dummyData = [
     date: DateTime.now(),
   ),
 ];
+
+
+List<String> columnNames=['Subject Name','Assignment','Attendance','Periodical Exam I','Periodical exam II','Total Internal'];
+List<DataRow> rowNames=[
+  const DataRow(
+      cells: <DataCell>[
+        DataCell(Text('19301')),
+        DataCell(Text('21')),
+        DataCell(Text('11')),
+        DataCell(Text('30')),
+        DataCell(Text('19')),
+        DataCell(Text('19')),
+  ]),
+  const DataRow(
+      cells: <DataCell>[
+        DataCell(Text('19302')),
+        DataCell(Text('11')),
+        DataCell(Text('51')),
+        DataCell(Text('60')),
+        DataCell(Text('90')),
+        DataCell(Text('65')),
+      ]),
+  const DataRow(
+      cells: <DataCell>[
+        DataCell(Text('19303')),
+        DataCell(Text('52')),
+        DataCell(Text('12')),
+        DataCell(Text('35')),
+        DataCell(Text('15')),
+        DataCell(Text('15')),
+      ]),
+  const DataRow(
+      cells: <DataCell>[
+        DataCell(Text('19304')),
+        DataCell(Text('10')),
+        DataCell(Text('16')),
+        DataCell(Text('35')),
+        DataCell(Text('65')),
+        DataCell(Text('14')),
+      ]),
+  const DataRow(
+      cells: <DataCell>[
+        DataCell(Text('19305')),
+        DataCell(Text('22')),
+        DataCell(Text('16')),
+        DataCell(Text('39')),
+        DataCell(Text('49')),
+        DataCell(Text('59')),
+      ]),
+  const DataRow(
+      cells: <DataCell>[
+        DataCell(Text('19305')),
+        DataCell(Text('22')),
+        DataCell(Text('16')),
+        DataCell(Text('39')),
+        DataCell(Text('49')),
+        DataCell(Text('59')),
+      ]),
+
+
+]
+;
