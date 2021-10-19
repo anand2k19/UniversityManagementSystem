@@ -2,7 +2,7 @@ import "package:flutter/material.dart";
 import "package:intl/intl.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
 
-import '../../models/note.dart';
+import '../../providers/note.dart';
 import '../subjectpage_screens/subject_page.dart';
 
 class Announcement extends StatefulWidget {
@@ -36,32 +36,37 @@ class _AnnouncementState extends State<Announcement> {
                       horizontal: 10,
                       vertical: 16,
                     ),
+                    padding: const EdgeInsets.symmetric(vertical: 3),
                     height: 60,
                     width: 60,
                     decoration: BoxDecoration(
-                        color: Colors.purple,
+                        color: Theme.of(context).primaryColor,
                         border: Border.all(width: 2, color: Colors.black),
                         borderRadius: BorderRadius.circular(8)),
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text(
                               DateFormat.LLL()
                                   .format(DateTime.now())
                                   .substring(0, 3),
                               style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              )),
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontFamily: 'FiraSans')),
                           Text(
                             DateTime.now().day.toString(),
-                            style: const TextStyle(color: Colors.white),
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'FiraSans',
+                                fontSize: 11),
                           ),
                           Text(DateFormat.jm().format(DateTime.now()),
                               style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 10,
+                                fontFamily: 'FiraSans',
                               ))
                         ]),
                   ),

@@ -11,16 +11,20 @@ class SubjectProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget buildIntroText(String label, String title) {
       return Container(
+          width: 130,
           alignment: Alignment.topLeft,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 label,
-                style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                style: Theme.of(context).textTheme.headline2!.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
               ),
-              Text(title),
+              Text(title,
+                  style: Theme.of(context).textTheme.headline1,
+                  overflow: TextOverflow.ellipsis),
             ],
           ));
     }
@@ -47,6 +51,7 @@ class SubjectProfile extends StatelessWidget {
             )
           ]),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

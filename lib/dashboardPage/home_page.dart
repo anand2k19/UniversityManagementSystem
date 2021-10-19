@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
               const Text(
                 'Admin',
                 style: TextStyle(
-                  fontFamily:'Glory',
+                  fontFamily: 'Glory',
                   color: Colors.lime,
                 ),
               ),
@@ -112,13 +112,12 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Text(
                         subjects[index].subjectCode,
+                        style: Theme.of(context).textTheme.headline3,
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      Text(
-                        subjects[index].subjectName,
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                            fontSize: 13, fontWeight: FontWeight.bold),
-                      ),
+                      Text(subjects[index].subjectName,
+                          textAlign: TextAlign.right,
+                          style: Theme.of(context).textTheme.headline2),
                     ],
                   ),
                 ),

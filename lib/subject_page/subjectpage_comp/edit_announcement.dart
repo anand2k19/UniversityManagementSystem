@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-import "../../models/note.dart";
+import '../../providers/note.dart';
 
 class EditAnnouncement extends StatefulWidget {
   Note note;
   final int index;
   final Function removeNote;
-
   EditAnnouncement(this.note, this.index, this.removeNote);
 
   @override
@@ -14,18 +13,16 @@ class EditAnnouncement extends StatefulWidget {
 }
 
 class _EditAnnouncementState extends State<EditAnnouncement> {
+  final _noteController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _noteController.text = widget.note.note;
+  }
+
   @override
   Widget build(BuildContext context) {
-    final _noteController = TextEditingController(text: widget.note.note);
-
-    void _submitData() {
-      if (_noteController.text == widget.note.note) {
-        Navigator.of(context).pop();
-      } else if (_noteController.text == "") {
-        widget.removeNote(widget.index);
-      } else {}
-    }
-
     return Card(
         elevation: 5,
         child: Container(
@@ -48,12 +45,15 @@ class _EditAnnouncementState extends State<EditAnnouncement> {
                       ),
                       child: RaisedButton(
                         child: Text('Cancel'),
-                        onPressed: () => Navigator.of(context).pop(),
+                        onPressed: () =>
+                            Navigator.of(context).pop(widget.note.note),
                       ),
                     ),
                     RaisedButton(
                       child: Text('Done'),
-                      onPressed: _submitData,
+                      onPressed: () {
+                        Navigator.of(context).pop(_noteController.text);
+                      },
                     ),
                   ],
                 )

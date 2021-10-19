@@ -11,22 +11,17 @@ class DashboardPage extends StatefulWidget {
 
   @override
   _DashboardPageState createState() => _DashboardPageState();
-
-
-
 }
 
 class _DashboardPageState extends State<DashboardPage> {
   int _currentIndex = 0;
-  bool isVisible=false;
+  bool isVisible = false;
 
-
-   final List <Widget> _widgetOptions = <Widget> [
-     const HomePage(),
-     const MarksPage(),
-     CalenderPage(),
-   ];
-
+  final List<Widget> _widgetOptions = <Widget>[
+    const HomePage(),
+    const MarksPage(),
+    CalenderPage(),
+  ];
 
   Widget buildListTile(String title, BuildContext context) {
     return Column(
@@ -44,10 +39,9 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset:false ,
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        centerTitle: true,
-        title: const Text('AUMS'),
+        title: Text('Welcome', style: Theme.of(context).textTheme.headline4),
         //actions: [
         //     ToggleButtons(
         //        children: [
@@ -80,10 +74,6 @@ class _DashboardPageState extends State<DashboardPage> {
         },
       ),
       body: _widgetOptions.elementAt(_currentIndex),
-
     );
   }
-
-
-
 }
