@@ -54,14 +54,15 @@ class LogInPage extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                   child: RaisedButton(
                     textColor: Colors.white,
-                    color: Colors.blue,
+                    
                     child: const Text('Login'),
                     onPressed: () {
                       print(nameController.text);
                       print(passwordController.text);
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => DashboardPage()),
+                        MaterialPageRoute(
+                            builder: (context) => DashboardPage()),
                       );
                     },
                   )),

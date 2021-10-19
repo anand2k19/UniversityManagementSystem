@@ -32,7 +32,11 @@ class _SubjectTabsScreenState extends State<SubjectTabsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final appBar = AppBar(title: Text(widget.subjectName));
+    final appBar = AppBar(
+        title: Text(
+      widget.subjectName,
+      style: Theme.of(context).textTheme.headline4,
+    ));
     List<Widget> tabs = [
       SubjectPage(
         subjectCode: widget.subjectCode,
@@ -54,7 +58,7 @@ class _SubjectTabsScreenState extends State<SubjectTabsScreen> {
       ),
       bottomNavigationBar: BottomNavigationBar(
           unselectedItemColor: Colors.blueGrey,
-          selectedItemColor: Colors.blue,
+          selectedItemColor: Theme.of(context).accentColor,
           showSelectedLabels: true,
           showUnselectedLabels: true,
           elevation: 8,

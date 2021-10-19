@@ -30,7 +30,12 @@ class _AnnouncementsState extends State<Announcements> {
           return GestureDetector(
               onTap: () {},
               child: EditAnnouncement(dummyData[index], index, _removeNote));
-        });
+        }).then((result) {
+      setState(() {
+        dummyData[index].note = result;
+        dummyData[index].isOpen = false;
+      });
+    });
   }
 
   @override

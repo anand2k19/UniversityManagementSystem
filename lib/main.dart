@@ -17,21 +17,34 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme:  ThemeData(
-        primarySwatch: Colors.amber,
-
-        // primaryColor: Color.fromRGBO(200, 100, 100, 1),
-        // scaffoldBackgroundColor: Color.fromRGBO(0, 0, 0, 1),
-        // brightness: Brightness.dark,
-        // appBarTheme: AppBarTheme(color: Color.fromRGBO(150, 200, 10, 1)),
-        // appBarTheme: AppBarTheme(color: Color.fromRGBO(150, 10, 50, 1)),
-      ),
+      theme: ThemeData(
+          primarySwatch: Colors.brown,
+          accentColor: Color(0xFFB79492),
+          appBarTheme: AppBarTheme(color: Color(0xFF774936)),
+          buttonTheme: ButtonThemeData(
+            buttonColor: Color(0xFFB79492),
+          ),
+          fontFamily: 'Lora',
+          textTheme: TextTheme(
+            headline1: TextStyle(fontSize: 13, fontWeight: FontWeight.normal),
+            headline2: TextStyle(
+              fontFamily: 'Montserrat',
+              fontSize: 15,
+            ),
+            headline3: TextStyle(
+              fontFamily: 'Barlow_Condensed',
+              fontSize: 20,
+            ),
+            headline4: TextStyle(
+                fontFamily: 'Lato', fontSize: 21, color: Colors.white),
+          )
+          ),
       home: LogInPage(),
-
-      routes:{'profilePage':(context) => const profile(),
-              'registrationPage':(context) => const registration(),
-              'feesPage':(context) => const fees(),
-              'settingsPage':(context) => const settings(),
+      routes: {
+        'profilePage': (context) => const profile(),
+        'registrationPage': (context) => const registration(),
+        'feesPage': (context) => const fees(),
+        'settingsPage': (context) => const settings(),
       },
     );
   }

@@ -1,7 +1,6 @@
-
 import 'package:flutter/material.dart';
 
-import "./models/note.dart";
+import 'providers/note.dart';
 import './models/sub.dart';
 
 final List<sub> subjects = <sub>[
@@ -9,37 +8,37 @@ final List<sub> subjects = <sub>[
     subjectCode: '19303',
     subjectName: "Embedded System",
     subjectTeacher: "Ron Jacob Varghese",
-    subjectColor: Colors.blueAccent,
+    subjectColor: const Color(0xFFef476f),
   ),
   sub(
     subjectCode: '19302',
     subjectName: "Design and Analysis of Algorithms",
     subjectTeacher: "Ananthakrishnan Rajeev",
-    subjectColor: Colors.orangeAccent,
+    subjectColor: const Color(0xFFffd166),
   ),
   sub(
     subjectCode: '19301',
     subjectName: "Machine Learning",
     subjectTeacher: "Ananthanandhanan",
-    subjectColor: Colors.greenAccent,
+    subjectColor: const Color(0xFF06d6a0),
   ),
   sub(
     subjectCode: '19300',
     subjectName: "Computer Networks",
     subjectTeacher: "Karthik Narayanan",
-    subjectColor: Colors.purpleAccent,
+    subjectColor: const Color(0xFF3a86ff),
   ),
   sub(
     subjectCode: '19305',
     subjectName: "Environmental Science",
     subjectTeacher: "Akshay",
-    subjectColor: Colors.indigoAccent,
+    subjectColor: const Color(0xFF757bc8),
   ),
   sub(
     subjectCode: '19304',
     subjectName: "Cultural Education",
     subjectTeacher: "Mahesh Ranjith",
-    subjectColor: Colors.cyanAccent,
+    subjectColor: const Color(0xFFee6c4d),
   ),
 ];
 
@@ -105,4 +104,3 @@ final List<Note> dummyData = [
     date: DateTime.now(),
   ),
 ];
-

@@ -78,63 +78,52 @@ flutter:
   fonts:
     - family: Glory
       fonts:
-        - asset: fonts/Glory-VariableFont_wght.ttf
-
+        - asset: assets/fonts/Glory-VariableFont_wght.ttf
 
     - family: Montserrat
       fonts:
-        - asset: fonts/Montserrat-Bold.ttf
-
+        - asset: assets/fonts/Montserrat-Bold.ttf
     - family: Raleway
       fonts:
-        - asset: fonts/Raleway-VariableFont_wght.ttf
+        - asset: assets/fonts/Raleway-VariableFont_wght.ttf
 
     - family: Hina_Mincho
       fonts:
-        - asset: fonts/HinaMincho-Regular.ttf
+        - asset: assets/fonts/HinaMincho-Regular.ttf
 
     - family: Barlow_Condensed
       fonts:
-        - asset: fonts/BarlowCondensed-Light.ttf
+        - asset: assets/fonts/BarlowCondensed-Light.ttf
 
     - family: Alumni_Sans
       fonts:
-        - asset: fonts/AlumniSans-VariableFont_wght.ttf
+        - asset: assets/fonts/AlumniSans-VariableFont_wght.ttf
 
     - family: Roboto
       fonts:
-        - asset: fonts/Roboto-Thin.ttf
+        - asset: assets/fonts/Roboto-Thin.ttf
+          weight: 100
 
     - family: Fira_Sans
       fonts:
-        - asset: fonts/FiraSans-ExtraLight.ttf
+        - asset: assets/fonts/FiraSans-ExtraLight.ttf
 
     - family: Alegreya_Sans
       fonts:
-        - asset: fonts/AlegreyaSans-Light.ttf
+        - asset: assets/fonts/AlegreyaSans-Light.ttf
+          weight: 100
 
     - family: Lato
       fonts:
-        - asset: fonts/Lato-Light.ttf
+        - asset: assets/fonts/Lato-Light.ttf
 
     - family: Lora
       fonts:
-        - asset: fonts/Lora-VariableFont_wght.ttf
+        - asset: assets/fonts/Lora-VariableFont_wght.ttf
 
     - family: Open_Sans
       fonts:
-        - asset: fonts/OpenSans-Light.ttf
-
-
-
-
-
-
-
-
-
-
-
+        - asset: assets/fonts/OpenSans-Light.ttf
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

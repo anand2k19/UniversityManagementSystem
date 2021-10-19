@@ -22,7 +22,13 @@ class _MultiPageNavState extends State<MultiPageNav> {
         length: 2,
         child: Scaffold(
           appBar: TabBar(
-            tabs: [Tab(text: "Assigned"), Tab(text: "Completed")],
+            tabs: [
+              Tab(
+                text: "Assigned",
+              ),
+              Tab(text: "Completed")
+            ],
+            labelColor: Theme.of(context).primaryColor,
           ),
           body: TabBarView(
             children: [

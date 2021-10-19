@@ -67,12 +67,9 @@ class _SubjectPageState extends State<SubjectPage> {
                         const SizedBox(
                           width: 3,
                         ),
-                        const Text(
+                        Text(
                           "Home",
-                          style: TextStyle(
-                            color: Colors.blueGrey,
-                            fontSize: 17,
-                          ),
+                          style: Theme.of(context).textTheme.headline2,
                         ),
                         const SizedBox(
                           width: 10,
